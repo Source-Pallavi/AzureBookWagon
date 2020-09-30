@@ -10,7 +10,7 @@ namespace AzureBookWagon.Base
         public IWebDriver driver;
         public static string title = ConfigurationManager.AppSettings["title"];
         public static string placeOrder = ConfigurationManager.AppSettings["placeOrder"];
-        public static string logout = ConfigurationManager.AppSettings["logout"];
+        public static string logOut = ConfigurationManager.AppSettings["logout"];
         [OneTimeSetUp]
         public void Initialize()
         {

@@ -44,7 +44,7 @@ namespace AzureBookWagon.Test
         {
             Logout logout = new Logout(driver);
             logout.LogOut();
-            Assert.AreEqual(driver.Url, logout);
+            Assert.AreEqual(driver.Url, logOut);
         }
     }
 }
