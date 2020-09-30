@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using AzureBookWagon.Utils;
+using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Configuration;
@@ -19,6 +21,22 @@ namespace AzureBookWagon.Base
             driver = new ChromeDriver(options);
             driver.Url = "https://www.bookswagon.com/login";
         }
+        [TearDown]
+        public void AddScreenshot()
+        {
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                string path = Utility.TakeScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                TestContext.AddTestAttachment(path, "failed");
+                    
+            }
+            else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
+            {
+                string path = Utility.TakeScreenshot(driver, TestContext.CurrentContext.Test.Name);
+                    TestContext.AddTestAttachment(path, "passed");
+            }
+        }
+
 
         [OneTimeTearDown]
         public void Close()

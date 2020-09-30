@@ -28,7 +28,7 @@ namespace AzureBookWagon.Test
         {
             PlaceOrder order = new PlaceOrder(driver);
             order.OrderBook();
-            Assert.AreEqual(driver.Url,placeOrder);
+            Assert.AreEqual(driver.Url, placeOrder);
         }
 
         [Test, Order(4)]
