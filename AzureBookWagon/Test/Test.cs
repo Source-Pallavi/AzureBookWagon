@@ -1,6 +1,4 @@
-﻿
-
-using AzureBookWagon.Base;
+﻿using AzureBookWagon.Base;
 using AzureBookWagon.pages;
 using AzureBookWagon.Pages;
 using NUnit.Framework;
@@ -16,12 +14,37 @@ namespace AzureBookWagon.Test
             login.BookwagonLogin();
             Assert.AreEqual(driver.Title, title);
         }
+
         [Test, Order(2)]
         public void HomePageTest()
         {
             HomePage home = new HomePage(driver);
             home.SearchItem("cobain");
             Assert.IsTrue(home.Validate().Displayed);
+        }
+
+        [Test, Order(3)]
+        public void PlaceOrderTest()
+        {
+            PlaceOrder order = new PlaceOrder(driver);
+            order.OrderBook();
+            Assert.AreEqual(driver.Url,placeOrder);
+        }
+
+        [Test, Order(4)]
+        public void CartCheckoutTest()
+
+        {
+            ShippingAddress cart = new ShippingAddress(driver);
+            cart.AddShippingDetails();
+        }
+
+        [Test, Order(5)]
+        public void LogoutTest()
+        {
+            Logout login = new Logout(driver);
+            login.LogOut();
+            Assert.AreEqual(driver.Url, logout);
         }
     }
 }

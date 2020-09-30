@@ -80,6 +80,9 @@
     <Compile Include="Base\BooksWagonBase.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\Login.cs" />
+    <Compile Include="Pages\Logout.cs" />
+    <Compile Include="Pages\PlaceOrder.cs" />
+    <Compile Include="Pages\ShippingAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\Test.cs" />
   </ItemGroup>
