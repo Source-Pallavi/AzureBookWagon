@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
+using System.Threading;
 
 namespace AzureBookWagon.Pages
 {
@@ -38,6 +39,7 @@ namespace AzureBookWagon.Pages
             home.Click();
             search.SendKeys(bookName);
             searchIcon.Click();
+            Thread.Sleep(2000);
         }
         public IWebElement Validate()
         {

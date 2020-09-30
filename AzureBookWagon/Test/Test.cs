@@ -23,6 +23,5 @@ namespace AzureBookWagon.Test
             home.SearchItem("cobain");
             Assert.IsTrue(home.Validate().Displayed);
         }
-
     }
 }
