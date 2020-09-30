@@ -18,28 +18,14 @@ namespace AzureBookWagon.Pages
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.Id, Using = "ctl00_lnkbtnLogout")]
+        [FindsBy(How = How.XPath, Using = "//a[@id='ctl00_lnkbtnLogout']")]
         public IWebElement logout;
-
-        [FindsBy(How = How.XPath, Using = "//span[@class='login-bg sprite usermenu-bg']")]
-        public IWebElement menu;
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='ac-container']//li[1]//a[1]")]
-        public IWebElement validation;
-
-        [FindsBy(How = How.XPath, Using = "//img[@id='ctl00_imglogo']")]
-        public IWebElement home;
 
         /// <summary>
         /// To logout from Bookwagon application
         /// </summary>
         public void LogOut()
         {
-            Thread.Sleep(5000);
-            home.Click();
-            Thread.Sleep(5000);
-            menu.Click();
-            Thread.Sleep(2000);
             logout.Click();
         }
     }
