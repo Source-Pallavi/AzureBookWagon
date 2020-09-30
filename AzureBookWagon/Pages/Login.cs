@@ -46,10 +46,9 @@ namespace AzureBookWagon.pages
         public void BookwagonLogin()
         {
             username.SendKeys(email);
-            Thread.Sleep(2000);
             pass.SendKeys(password);
-            Thread.Sleep(2000);
             loginbutton.Click();
+            Thread.Sleep(2000);
         }
     }
 }

@@ -1,12 +1,14 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Configuration;
 
 namespace AzureBookWagon.Base
 {
     public class BooksWagonBase
     {
         public IWebDriver driver;
+      public static string title = ConfigurationManager.AppSettings["title"];
         [OneTimeSetUp]
         public void Initialize()
         {

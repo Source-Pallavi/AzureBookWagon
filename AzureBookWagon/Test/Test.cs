@@ -13,6 +13,7 @@ namespace AzureBookWagon.Test
         {
             Login login = new Login(driver);
             login.BookwagonLogin();
+            Assert.AreEqual(driver.Title, title);
         }
     }
 }
