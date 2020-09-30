@@ -36,7 +36,7 @@ namespace AzureBookWagon.Pages
         public void LogOut()
         {
             home.Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(5000);
             menu.Click();
             Thread.Sleep(2000);
             logout.Click();
