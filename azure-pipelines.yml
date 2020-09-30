@@ -28,7 +28,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
--
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
