@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AzureBookWagon.Reader;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System.Configuration;
 using System.Threading;
@@ -8,8 +9,9 @@ namespace AzureBookWagon.pages
     public class Login
     {
         public IWebDriver driver;
-        string email = ConfigurationManager.AppSettings["email"];
-        string password = ConfigurationManager.AppSettings["password"];
+        readonly JsonReader reader = new JsonReader();
+        //string email = ConfigurationManager.AppSettings["email"];
+        //string password = ConfigurationManager.AppSettings["password"];
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Login"/> class
@@ -45,8 +47,8 @@ namespace AzureBookWagon.pages
         /// </summary>
         public void BookwagonLogin()
         {
-            username.SendKeys(email);
-            pass.SendKeys(password);
+            username.SendKeys(reader.email);
+            pass.SendKeys(reader.password);
             loginbutton.Click();
             Thread.Sleep(2000);
         }

@@ -33,7 +33,7 @@ namespace AzureBookWagon.Base
             else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
             {
                 string path = Utility.TakeScreenshot(driver, TestContext.CurrentContext.Test.Name);
-                    TestContext.AddTestAttachment(path, "passed");
+                TestContext.AddTestAttachment(path, "passed");
             }
         }
 
